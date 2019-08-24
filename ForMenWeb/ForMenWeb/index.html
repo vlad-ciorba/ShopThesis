@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ForMen Web Shop</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/add_edit.css">
+    <link rel="stylesheet" href="css/cardview.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/controls.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/tableview.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/angular-ui-notification.min.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.js"></script>
+    <script type="text/javascript" src="js/angular-cookies.js"></script>
+    <script type="text/javascript" src="js/angular-ui-notification.min.js"></script>
+    <script type="text/javascript" src="js/angular-base64-upload.js"></script>
+</head>
+
+<body ng-app="webShopApp" ng-controller="mainController">
+    <div id="container">
+        <div id="header">
+
+            <div id="cart-logo" ng-if="isLoggedUser()">
+                <div id="articles-nr">
+                    <span>{{ cartSize }}</span>
+                </div>
+                <a href="#!/cart">
+                    <div id="cart-btn" class="custom_btn2">
+                        <img src="img/cart.png" />
+                    </div>
+                </a>
+            </div>
+
+            <div id="wl-logo" ng-if="isLoggedUser()">
+                <div id="articles-wl">
+                    <span>{{ getWishlistSize() }}</span>
+                </div>
+                <a href="#!/wishlist">
+                    <div id="wl-btn" class="custom_btn2">
+                        <img src="img/wishlist.png" />
+                    </div>
+                </a>
+            </div>
+
+            <div id="logo-wrapper">
+                <a href="#!/home"><img src="img/logo.png" id="logo" /></a>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="#!/home">Home</a></li>
+                    <li><a href="" ng-click="accessProductsPage()">Products</a></li>
+                    <li><a ng-if="isLoggedUser()" ng-click="editMyProfile()">My Profile</a></li>
+                    <li><a ng-if="isLoggedUser()" href="#!/myOrders">My Orders</a></li>
+                    <li><a ng-if="isAdmin()" href="#!/users">Users</a></li>
+                    <li><a ng-if="isAdmin()" href="#!/orders">Orders</a></li>
+                    <li><a href="#!/contact">Contact</a></li>
+                    <li ng-if="!isLoggedUser()" class="login"><a href="#!/account">Login</a></li>
+                    <li ng-if="isLoggedUser()" class="login"><a href="" ng-click="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="content">
+
+            <div ng-view></div>
+
+        </div>
+
+        <div id="footer">
+            <p>ForMen Web Shop | &copy; Copyright 2017 | Dorha Alex</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/productController.js"></script>
+    <script src="js/productDetailsController.js"></script>
+    <script src="js/cartController.js"></script>
+    <script src="js/cartService.js"></script>
+    <script src="js/wishlistService.js"></script>
+    <script src="js/wishlistController.js"></script>
+    <script src="js/userController.js"></script>
+    <script src="js/mainController.js"></script>
+    <script src="js/myOrderController.js"></script>
+    <script src="js/orderController.js"></script>
+    <script src="js/accountController.js"></script>
+    <script src="js/homeController.js"></script>
+    <script src="js/contactController.js"></script>
+</body>
+</html>

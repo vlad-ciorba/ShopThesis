@@ -1,0 +1,30 @@
+<div class="product_data">
+    <form ng-submit="sendMail(contact)">
+        <p class="formfield">
+            <label class="label">Full name</label>
+            <input class="prod" type="text" ng-model="contact.FullName" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Email</label>
+            <input class="prod" type="text" ng-model="contact.Email" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Phone (optional)</label>
+            <input class="prod" type="text" ng-model="contact.Phone" />
+        </p>
+        <p class="formfield">
+            <label class="label">Message</label>
+            <textarea class="prod descr" ng-model="contact.Message" required></textarea>
+        </p>
+        <center>
+            <input type="submit" class="button custom_btn center" value="Contact Us" />
+        </center>
+    </form>
+</div>
+
+<br />
+<center>
+    <div ng-show="sent">
+        Thannk you for contacting us! We'll get back to you soon.
+    </div>
+</center>

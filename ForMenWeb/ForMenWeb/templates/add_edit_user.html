@@ -1,0 +1,52 @@
+<div class="product_data">
+    <div ng-show="!editingUser"><span class="flag"></span>Add user:</div>
+    <div ng-show="editingUser && editingUser.ID != getLoggedUser()"><span class="flag"></span>Edit user:</div>
+    <div ng-show="editingUser && editingUser.ID == getLoggedUser()"><span class="flag"></span>Edit profile:</div>
+    <br />
+
+    <form ng-submit="!editingUser ? addUser(user,verifiedPassword) : editUser(user,verifiedPassword)">
+        <p class="formfield">
+            <label class="label">First name</label>
+            <input class="prod" type="text" ng-model="user.FirstName" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Last Name</label>
+            <input class="prod" type="text" ng-model="user.LastName" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Username</label>
+            <input class="prod" type="text" ng-model="user.Username" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Email</label>
+            <input class="prod" type="text" ng-model="user.Email" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Phone</label>
+            <input class="prod" type="text" ng-model="user.Phone" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Address</label>
+            <textarea class="prod descr" ng-model="user.Address" required></textarea>
+        </p>
+        <p class="formfield" ng-show="isAdmin()">
+            <label class="label">Role</label>
+            <select class="prod" ng-model="userRole" ng-init="userRole = !user.IsAdmin ? 'user' : 'admin'">
+                <option value="user">USER</option>
+                <option value="admin">ADMIN</option>
+            </select>
+        </p>
+        <p class="formfield">
+            <label class="label">Password</label>
+            <input class="prod" type="password" ng-model="user.Password" ng-required="!editingUser" />
+        </p>
+        <p class="formfield">
+            <label class="label">Repeat password</label>
+            <input class="prod" type="password" ng-model="verifiedPassword" ng-required="!editingUser" />
+        </p>
+        <center>
+            <input ng-show="!editingUser" type="submit" class="button custom_btn center" value="Add user" />
+            <input ng-show="editingUser" type="submit" class="button custom_btn center" value="Edit user" />
+        </center>
+    </form>
+</div>

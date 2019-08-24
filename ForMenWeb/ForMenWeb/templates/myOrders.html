@@ -1,0 +1,40 @@
+<div class="article" ng-repeat="order in orders">
+    <div class="article-code-name" ng-init="product.checked=false">
+        <div class="article-code">
+            <p>Order ID: #{{order.ID}}</p>
+        </div>
+        <div class="article-name">
+            <p>{{order.Date | date}}</p>
+            <p>{{order.status}}</p>
+        </div>
+    </div>
+    <div class="article-image user-info">
+        <p class="user-title">Info:</p>
+        <ul class="user-inf">
+            <li><b>User name: </b>{{user.FirstName}} {{user.LastName}}</li>
+            <li><b>User email: </b>{{user.Email}}</li>
+            <li><b>Order address: </b>{{order.Address}}</li>
+        </ul>
+    </div>
+    <div class="article-description prod-inf">
+        <p class="user-title">Products: ({{order.Products.length}} products)</p> <!-- {{calcTotalPrice(order.products)}} RON -->
+        <ul class="user-inf">
+            <li ng-repeat="prod in order.Products">{{prod.Quantity}} x {{prod.name}}</li>
+        </ul>
+    </div>
+    <div class="buttons-control" ng-show="order.StatusID == 1">
+        <div class="cancel btn-ctr" ng-click="changeOrderStatus(order, 2)">Cancel</div>
+    </div>
+    <div class="buttons-control" ng-show="order.StatusID == 4">
+        <div class="return btn-ctr" ng-click="changeOrderStatus(order, 5)">Return</div>
+    </div>
+    <div class="article-cancelling" ng-hide="order.StatusID == 1 || order.StatusID == 4">
+        <span>No actions available</span>
+    </div>
+</div>
+
+<div ng-if="!orders.length">
+    <center>
+        <h2 class="ng-scope">You have no orders yet.</h2>
+    </center>
+</div>

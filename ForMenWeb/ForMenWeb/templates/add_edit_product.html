@@ -1,0 +1,56 @@
+<div class="product_data">
+    <div ng-show="!editingProduct"><span class="flag"></span>Add product:</div>
+    <div ng-show="editingProduct"><span class="flag"></span>Edit product:</div>
+    <br />
+
+    <form ng-submit="!editingProduct ? addProduct(product) : editProduct(product)">
+        <p class="formfield">
+            <label class="label">Name</label>
+            <input class="prod" required type="text" id="name" ng-model="product.Name" />
+        </p>
+        <p class="formfield">
+            <label class="label">Description</label>
+            <textarea class="prod descr" id="description" ng-model="product.Description"></textarea>
+        </p>
+        <p class="formfield">
+            <label class="label">Category</label>
+            <select class="prod" ng-model="product.CategoryID" required>
+                <option value="">Select</option>
+                <option ng-repeat="category in categories" ng-value="category.ID">{{category.Name}}</option>
+            </select>
+        </p>
+        <p class="formfield">
+            <label class="label">Price</label>
+            <input class="prod" required type="number" id="price" ng-model="product.Price" />
+        </p>
+        <p class="formfield">
+            <label class="label">Display Image</label>
+            <!-- Add -->
+            <input type="file" ng-model="file" name="file" base-sixty-four-input maxsize="2000" accept="image/*" ng-show="!file.base64 && !product.DisplayImageURL" ng-required="!file.base64 && !product.DisplayImageURL" />
+            <a ng-click="removeDisplayImage()" ng-if="file.base64" title="Remove image">
+                <img ng-src="data:{{file.filetype}};base64,{{file.base64}}" class="display-image" />
+            </a>
+            <!-- Edit -->
+            <a ng-click="removeDisplayImage()" ng-if="product.DisplayImageURL" title="Remove image">
+                <img ng-src="{{product.DisplayImageURL}}" class="display-image" />
+            </a>
+        </p>
+        <p class="formfield">
+            <label class="label">Quantity</label>
+            <input class="prod" required type="number" id="quantity" ng-model="product.Quantity" />
+        </p>
+        <p class="formfield">
+            <label class="label">Size</label>
+            <input class="prod" required type="text" id="size" ng-model="product.Size" />
+        </p>
+        <p class="formfield">
+            <label class="label">Color</label>
+            <input class="prod" required type="text" id="color" ng-model="product.Color" />
+        </p>
+
+        <center>
+            <input ng-show="!editingProduct" type="submit" class="button custom_btn center" value="Add product" />
+            <input ng-show="editingProduct" type="submit" class="button custom_btn center" value="Edit product" />
+        </center>
+    </form>
+</div>

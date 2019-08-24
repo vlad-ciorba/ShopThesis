@@ -1,0 +1,57 @@
+<!--<div id="control_products">
+    <a href="" ng-click="acceptAllOrders()">
+        <div class="custom_btn">
+            <span>Accept all orders</span>
+        </div>
+    </a>
+    <a href="" ng-click="rejectAllOrders()">
+        <div class="custom_btn">
+            <span>Reject all orders</span>
+        </div>
+    </a>
+</div>-->
+
+<div class="article" ng-repeat="order in orders">
+    <div class="article-code-name" ng-init="product.checked=false">
+        <div class="article-code">
+            <p>Order ID: #{{order.ID}}</p>
+        </div>
+        <div class="article-name">
+            <p>{{order.Date | date}}</p>
+            <p>{{order.status}}</p>
+        </div>
+    </div>
+    <div class="article-image user-info" style="width:330px;">
+        <p class="user-title">Info:</p>
+        <ul class="user-inf">
+            <li><b>User name: </b>{{order.user.FirstName}} {{order.user.LastName}}</li>
+            <li><b>User email: </b>{{order.user.Email}}</li>
+            <li><b>Order address: </b>{{order.Address}}</li>
+        </ul>
+    </div>
+    <div class="article-description prod-inf" style="width:330px;">
+        <p class="user-title">Products: ({{order.Products.length}} products)</p> <!-- {{calcTotalPrice(order.products)}} RON -->
+        <ul class="user-inf">
+            <li ng-repeat="prod in order.Products">{{prod.Quantity}} x {{prod.name}}</li>
+        </ul>
+    </div>
+    <div>
+        <label ng-repeat="status in orderStatuses">
+            <input type="radio" name="status_{{order.ID}}" ng-checked="order.StatusID == status.ID" ng-click="changeOrderStatus(order, status)" /> {{status.Status}} <br />
+        </label>
+    </div>
+    <!--<div class="buttons-control">
+        <div class="accept btn-ctr" ng-click="acceptOrder(order)">
+            Accept
+        </div>
+        <div class="reject btn-ctr" ng-click="rejectOrder(order)">
+            Reject
+        </div>
+    </div>-->
+</div>
+
+<div ng-if="!orders.length">
+    <center>
+        <h2 class="ng-scope">No orders yet.</h2>
+    </center>
+</div>

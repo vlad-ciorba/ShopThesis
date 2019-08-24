@@ -1,0 +1,286 @@
+.images {
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+}
+
+.article {
+    margin: 10px;
+    margin-top: 25px;
+    height: 110px;
+    background-color: #005B9A;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.6), 0px 0px 8px 0px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 2px;
+    color: #fff;
+    font-family: arial;
+    font-size: 0.9em;
+    overflow: hidden;
+}
+
+    .article:hover {
+        background-color: #0069b2;
+        box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.6), 0px 0px 8px 0px rgba(0,0,0,0.8);
+    }
+
+.article-code {
+    width: 100%;
+    height: 25px;
+    float: left;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    background-color: #005B9A;
+    box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.3);
+}
+
+.article:hover .article-code {
+    background-color: #0069b2;
+}
+
+.article-cancelling {
+    width: 80px;
+    height: 25px;
+    float: left;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.article-code p {
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.article-name {
+    width: 150px;
+    float: left;
+    text-align: center;
+}
+
+.article-code-name {
+    width: 150px;
+    float: left;
+    height: 100%;
+    border-right: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.3);
+}
+
+.article-image {
+    float: left;
+    width: 100px;
+    height: 100%;
+    border-right: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.3);
+}
+
+    .article-image img {
+        width: 90px;
+        height: 90px;
+        border: solid 1px white;
+    }
+
+.article-description {
+    float: left;
+    width: 450px;
+    height: calc(100% - 20px);
+    padding: 10px;
+    font-family: arial;
+    font-size: 0.9em;
+    overflow: auto;
+    border-right: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.3);
+}
+
+    .article-description p {
+        text-indent: 10px;
+        margin: 0;
+    }
+
+.article-price-weight-check {
+    float: left;
+    width: 215px;
+    height: 100%;
+}
+
+.article-check {
+    height: 50px;
+}
+
+ul.user-inf {
+    list-style-position: inside;
+    list-style-type: square;
+    margin: 10px 0 0 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+    ul.user-inf li {
+        padding-left: 5px;
+        padding-bottom: 2px;
+    }
+
+
+.article-check a {
+    text-decoration: none;
+    border: 0;
+    outline: none;
+}
+
+.article-price-weight {
+    float: left;
+    width: 140px;
+    padding: 5px 15px;
+    border-right: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.3);
+}
+
+    .article-price-weight ul {
+        list-style-type: none;
+        list-style-position: inside;
+        margin: 0;
+        padding: 0;
+    }
+
+    .article-price-weight li {
+        margin-top: 3px;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+        .article-price-weight li span {
+            float: right;
+        }
+
+.checkProduct {
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    margin: 12px 0 0 15px;
+    padding: 0px;
+}
+
+.editButton {
+    float: left;
+    height: 15px;
+    width: 16px;
+    background-color: #005B9A;
+    border: solid 1px rgba(255,255,255,0.3);
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.5);
+    padding: 0px;
+    margin: 9px 0 5px 15px;
+    text-align: center;
+    font-size: 0.8em;
+    color: white;
+    padding-top: 4px;
+}
+
+    .editButton:hover {
+        background-color: #0069b2;
+        box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+
+    .editButton:active {
+        background-color: #000;
+        border: solid 1px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.2);
+        cursor: pointer;
+        color: #DDDDDD;
+    }
+
+
+.user-info {
+    width: 350px;
+    overflow: auto;
+}
+
+.user-title {
+    padding-left: 15px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    padding-bottom: 2px;
+    font-size: 1.1em;
+    font-family: Calibri;
+    color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.3);
+}
+
+.prod-inf {
+    width: 350px;
+    padding: 5px 0 0 0;
+    margin: 0;
+    height: 100%;
+    display: block;
+    overflow: auto;
+}
+
+.buttons-control {
+    float: left;
+    padding: 5px 5px;
+}
+
+.btn-ctr {
+    background-color: #810502;
+    height: 27px;
+    width: 70px;
+    text-align: center;
+    margin-left: 3px;
+    padding-top: 13px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,1);
+    border: 1px solid rgba(0,0,0,0.3);
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+    .btn-ctr:hover {
+        background-color: #940800;
+        box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,1), 0px 0px 3px 0px rgba(0,0,0,0.5);
+    }
+
+.return:hover {
+    color: #00b924;
+    font-weight: bold;
+}
+
+.cancel:hover {
+    color: #d98700;
+    font-weight: bold;
+}
+
+.product-table .edit_pannel {
+    float: right;
+    height: 16px;
+    width: 16px;
+    background-color: #005B9A;
+    border: solid 1px rgba(255,255,255,0.3);
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.5);
+    padding: 0px;
+    margin-top: 5px;
+    margin-right: 5px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+    .product-table .edit_pannel:hover {
+        background-color: #0069b2;
+        box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+
+    .product-table .edit_pannel:active {
+        background-color: #000;
+        border: solid 1px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.2);
+        cursor: pointer;
+        color: #DDDDDD;
+    }
+
+.product-table .action-button {
+    float: left;
+    width: 110px;
+    margin: 2px 0 6px 0 !important;
+    padding: 5px 0 0 28px;
+}

@@ -63,7 +63,7 @@
         <a href="#!/productDetails/{{product.ID}}">
             <div class="img_shadow"><img ng-src="{{product.DisplayImageURL || 'img/default_product.png'}}" /></div>
         </a>
-        <p>{{product.Description.length <= 250 ? product.Description : product.Description.substring(0,250) + '...'}}</p>
+        <p>{{product.Description.length <= 285 ? product.Description : product.Description.substring(0,285) + '...'}}</p>
     </div>
     <div class="details_section">
         <ul>

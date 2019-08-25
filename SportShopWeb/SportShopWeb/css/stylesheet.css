@@ -41,12 +41,6 @@ iframe {
     height: 40px;
 }
 
-#logo {
-    cursor: pointer;
-    height: 90px;
-    width: auto;
-}
-
 #content {
     min-height: calc(100vh - 245px);
     margin: auto;

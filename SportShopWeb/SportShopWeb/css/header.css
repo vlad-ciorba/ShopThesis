@@ -9,14 +9,22 @@ body, html {
     margin: 0;
 }
 
-#logo-wrapper {
+#header-wrapper {
     height: 120px;
     box-shadow: inset 0px 0px 0px 10px white, inset 0px 0px 0px 11px #e1e1e1;
 }
 
-    #logo-wrapper img {
+    #header-wrapper #logo {
         margin-left: 20px;
         margin-top: 17px;
+        cursor: pointer;
+        width: auto;
+        height: 90px;
+    }
+
+    #header-wrapper .ad-banner-400 {
+        margin-left: 70px;
+        height: 90px;
     }
 
 #cart-logo {

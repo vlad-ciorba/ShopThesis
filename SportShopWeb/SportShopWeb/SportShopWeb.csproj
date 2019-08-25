@@ -85,6 +85,7 @@
     <Content Include="img\home.jpg" />
     <Content Include="img\list.png" />
     <Content Include="img\logo.png" />
+    <Content Include="img\sales-400.png" />
     <Content Include="img\user_delete.png" />
     <Content Include="img\user_edit.png" />
     <Content Include="img\wishlist-icon.png" />

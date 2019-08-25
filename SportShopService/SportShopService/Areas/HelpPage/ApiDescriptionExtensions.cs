@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace SportShop.Areas.HelpPage
+namespace SportShopService.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

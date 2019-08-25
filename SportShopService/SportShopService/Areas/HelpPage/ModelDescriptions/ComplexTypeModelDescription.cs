@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace SportShop.Areas.HelpPage.ModelDescriptions
+namespace SportShopService.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

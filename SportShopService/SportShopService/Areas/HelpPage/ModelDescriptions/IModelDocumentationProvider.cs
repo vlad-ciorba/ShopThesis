@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace SportShop.Areas.HelpPage.ModelDescriptions
+namespace SportShopService.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

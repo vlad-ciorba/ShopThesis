@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace SportShop.Areas.HelpPage.ModelDescriptions
+namespace SportShopService.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

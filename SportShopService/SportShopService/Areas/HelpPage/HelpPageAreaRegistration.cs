@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace SportShop.Areas.HelpPage
+namespace SportShopService.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

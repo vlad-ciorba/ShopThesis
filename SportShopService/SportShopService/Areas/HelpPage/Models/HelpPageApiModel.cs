@@ -1,10 +1,10 @@
-using SportShop.Areas.HelpPage.ModelDescriptions;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
+using SportShopService.Areas.HelpPage.ModelDescriptions;
 
-namespace SportShop.Areas.HelpPage.Models
+namespace SportShopService.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

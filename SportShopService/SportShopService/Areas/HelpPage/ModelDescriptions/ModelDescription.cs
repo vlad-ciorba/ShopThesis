@@ -1,6 +1,6 @@
 using System;
 
-namespace SportShop.Areas.HelpPage.ModelDescriptions
+namespace SportShopService.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

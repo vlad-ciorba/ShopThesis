@@ -1,10 +1,10 @@
-using SportShop.Areas.HelpPage.ModelDescriptions;
-using SportShop.Areas.HelpPage.Models;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
+using SportShopService.Areas.HelpPage.ModelDescriptions;
+using SportShopService.Areas.HelpPage.Models;
 
-namespace SportShop.Areas.HelpPage.Controllers
+namespace SportShopService.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

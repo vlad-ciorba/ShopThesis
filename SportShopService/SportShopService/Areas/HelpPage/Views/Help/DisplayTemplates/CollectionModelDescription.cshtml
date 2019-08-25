@@ -1,6 +1,6 @@
-@using SportShop.Areas.HelpPage.ModelDescriptions
+@using SportShopService.Areas.HelpPage.ModelDescriptions
 @model CollectionModelDescription
 @if (Model.ElementDescription is ComplexTypeModelDescription)
 {
-@Html.DisplayFor(m => m.ElementDescription)
+    @Html.DisplayFor(m => m.ElementDescription)
 }

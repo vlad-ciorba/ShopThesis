@@ -36,17 +36,17 @@ namespace SportShop.Controllers
             if (dbUser != null)
             {
                 MailMessage msg = new MailMessage();
-                msg.From = new MailAddress("SportShopwebshop@gmail.com");
+                msg.From = new MailAddress("SportShop.WebShop@gmail.com");
                 msg.To.Add(dbUser.Email);
                 msg.Subject = "SportShop password reset";
-                msg.Body = "Hi\r\nYour credentials on SportShop web shop are:\r\n\r\nUsername: " + dbUser.Username + "\r\nPassword: " + dbUser.Password;
+                msg.Body = "Hello " + dbUser.FirstName + ",\r\nYour credentials on SportShop web shop are:\r\n\r\nUsername: " + dbUser.Username + "\r\nPassword: " + dbUser.Password;
                 SmtpClient client = new SmtpClient();
                 client.UseDefaultCredentials = true;
                 client.Host = "smtp.gmail.com";
                 client.Port = 587;
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.Credentials = new NetworkCredential("SportShopwebshop@gmail.com", "pufuleti");
+                client.Credentials = new NetworkCredential("SportShop.WebShop@gmail.com", "pufuleti");
                 client.Timeout = 3000;
                 try
                 {

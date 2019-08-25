@@ -2,15 +2,21 @@
 // package to your project.
 ////#define Handle_PageResultOfT
 
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Net.Http.Headers;
+using System.Reflection;
+using System.Web;
 using System.Web.Http;
-
 #if Handle_PageResultOfT
 using System.Web.Http.OData;
 #endif
 
-namespace SportShop.Areas.HelpPage
+namespace SportShopService.Areas.HelpPage
 {
     /// <summary>
     /// Use this class to customize the Help Page.
@@ -20,7 +26,7 @@ namespace SportShop.Areas.HelpPage
     public static class HelpPageConfig
     {
         [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters",
-            MessageId = "SportShop.Areas.HelpPage.TextSample.#ctor(System.String)",
+            MessageId = "SportShopService.Areas.HelpPage.TextSample.#ctor(System.String)",
             Justification = "End users may choose to merge this string with existing localized resources.")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly",
             MessageId = "bsonspec",
@@ -31,7 +37,7 @@ namespace SportShop.Areas.HelpPage
             //config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));
 
             //// Uncomment the following to use "sample string" as the sample for all actions that have string as the body parameter or return type.
-            //// Also, the string arrays will be used for IEnumerable<string>. The sample objects will be serialized into different media type
+            //// Also, the string arrays will be used for IEnumerable<string>. The sample objects will be serialized into different media type 
             //// formats by the available formatters.
             //config.SetSampleObjects(new Dictionary<Type, object>
             //{

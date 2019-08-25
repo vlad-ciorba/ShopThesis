@@ -1,4 +1,3 @@
-using SportShop.Areas.HelpPage.ModelDescriptions;
 using System;
 using System.Globalization;
 using System.Linq;
@@ -6,8 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
+using SportShopService.Areas.HelpPage.ModelDescriptions;
 
-namespace SportShop.Areas.HelpPage
+namespace SportShopService.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

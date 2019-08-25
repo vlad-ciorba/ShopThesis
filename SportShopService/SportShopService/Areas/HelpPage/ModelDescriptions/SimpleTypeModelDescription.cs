@@ -1,4 +1,4 @@
-namespace SportShop.Areas.HelpPage.ModelDescriptions
+namespace SportShopService.Areas.HelpPage.ModelDescriptions
 {
     public class SimpleTypeModelDescription : ModelDescription
     {

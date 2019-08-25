@@ -1,0 +1,84 @@
+<div class="product_data" ng-show="showLogin">
+    <form ng-submit="login(username,password)">
+        <p class="formfield">
+            <label class="label">Username</label>
+            <input class="prod" type="text" name="username" ng-model="username" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Password</label>
+            <input class="prod" type="password" ng-model="password" required />
+        </p>
+        <center>
+            <input ng-show="!editingUser" type="submit" class="button custom_btn center" value="Login" />
+        </center>
+        <div class="invalid" ng-show="message">
+            <br />
+            {{message}}
+        </div>
+    </form>
+</div>
+
+<div class="product_data" ng-show="showRegister">
+    <form ng-submit="addUser(user,verifiedPassword)">
+        <p class="formfield">
+            <label class="label">First name</label>
+            <input class="prod" type="text" ng-model="user.FirstName" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Last Name</label>
+            <input class="prod" type="text" ng-model="user.LastName" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Username</label>
+            <input class="prod" type="text" ng-model="user.Username" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Email</label>
+            <input class="prod" type="text" ng-model="user.Email" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Phone</label>
+            <input class="prod" type="text" ng-model="user.Phone" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Address</label>
+            <textarea class="prod descr" ng-model="user.Address" required></textarea>
+        </p>
+        <p class="formfield">
+            <label class="label">Password</label>
+            <input class="prod" type="password" ng-model="user.Password" required />
+        </p>
+        <p class="formfield">
+            <label class="label">Repeat password</label>
+            <input class="prod" type="password" ng-model="verifiedPassword" required />
+        </p>
+        <center>
+            <input type="submit" class="button custom_btn center" value="Register account" />
+        </center>
+    </form>
+</div>
+
+<div class="product_data" ng-show="showRecover">
+    <form ng-submit="recover(email)">
+        <p class="formfield">
+            <label class="label">Email</label>
+            <input class="prod" type="text" ng-model="email" required />
+        </p>
+        <center>
+            <input type="submit" class="button custom_btn center" value="Recover" ng-show="!recoverDisabled" />
+            <input type="button" class="button custom_btn center" value="Please Wait" ng-show="recoverDisabled" />
+        </center>
+    </form>
+</div>
+
+<center>
+    <div class="login-button" ng-click="switchLogin()" ng-show="!showLogin">
+        <a class="login-link">Login</a>
+    </div>
+    <div class="register-button" ng-click="switchRegister()" ng-show="!showRegister">
+        <a class="login-link">Register an account</a>
+    </div>
+    <div class="lost-button" ng-click="switchRecover()" ng-show="!showRecover">
+        <a class="login-link">Lost account?</a>
+    </div>
+</center>

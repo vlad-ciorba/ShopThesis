@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="container-fliud">
+        <div class="wrapper row">
+            <div class="preview col-md-6">
+
+                <div class="preview-pic tab-content">
+                    <div class="tab-pane product-image" id="pic-1"><img ng-src="{{product.DisplayImageURL ? product.DisplayImageURL : 'img/default_product.png'}}" /></div>
+                </div>
+            </div>
+            <div class="details col-md-6">
+
+                <h3 class="product-title">{{product.Name}}</h3>
+
+                <span>Code: #{{product.ID}}</span>
+                <span>Category: {{product.Category}}</span>
+
+                <p class="product-description">{{product.Description}}</p>
+
+                <h4 class="price">Price: <span>{{product.Price}}</span> RON</h4>
+                <h5 class="sizes">
+                    Size:
+                    <span class="size" ng-repeat="size in sizes">{{size}}</span>
+                </h5>
+                <h5 class="colors">
+                    Color:
+                    <span class="color">{{product.Color}}</span>
+                </h5>
+                <h5 class="quantities">
+                    AVAILABLE:
+                    <span class="quantity" ng-style="product.Quantity > 5 ? {'color':'green'} : {'color':'red'}">{{product.Quantity}} in stock</span>
+                </h5>
+                <div class="action">
+                    <a ng-click="addToCart(product)"><span class="edit_pannel action-button button-cart-single">Add to cart</span></a>
+                    <a ng-click="addToWishlist(product)"><span class="edit_pannel action-button button-wishlist-single">Add to wishlist</span></a>
+                </div>
+
+                <a ng-if="isAdmin()" ng-click="gotoEditProduct(product)"><span class="edit_pannel action-button button-edit-single">Edit</span></a>
+            </div>
+        </div>
+    </div>
+</div>

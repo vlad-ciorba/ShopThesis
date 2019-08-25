@@ -1,0 +1,123 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: url('../img/bg.png');
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#container {
+    width: 1000px;
+    margin: auto;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+}
+
+frameset {
+    margin: 0;
+    padding: 0;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: auto;
+}
+
+#header {
+    height: 185px;
+}
+
+#footer {
+    height: 40px;
+}
+
+#logo {
+    cursor: pointer;
+    height: 90px;
+    width: auto;
+}
+
+#content {
+    min-height: calc(100vh - 245px);
+    margin: auto;
+    margin-bottom: 20px;
+    width: 960px;
+    overflow: auto;
+    height: 100%;
+}
+
+table.user {
+    width: calc(100% - 40px);
+    margin: 0 10px;
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+    table.user tr {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+        border: 0;
+        height: 45px;
+        display: table-row;
+        width: 100%;
+        border-radius: 1px;
+        line-height: 5px;
+        background: #005B9A;
+        color: white;
+        font-family: calibri;
+        font-size: 1em;
+    }
+
+        table.user tr.header {
+            margin-bottom: 15px;
+            background: #000;
+        }
+
+    table.user .header:hover {
+        background: #000;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    table.user tr:hover {
+        background: #0069b2;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    table.user th, td {
+        text-align: center;
+        border: none;
+        border-right: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.3);
+        height: 43px;
+    }
+
+    table.user td.delete {
+        cursor: pointer;
+    }
+
+        table.user td.delete:hover {
+            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    table.user .promote {
+        cursor: pointer;
+    }
+
+    table.user td.action:hover {
+        box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.invalid {
+    color: #f00;
+    text-align: center;
+}

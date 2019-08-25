@@ -1,0 +1,19 @@
+namespace SportShop.Migrations
+{
+    using System.Data.Entity.Migrations;
+
+    public partial class _06OrderFields : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Orders", "Date", c => c.DateTime(nullable: false));
+            AddColumn("dbo.Orders", "Address", c => c.String());
+        }
+
+        public override void Down()
+        {
+            DropColumn("dbo.Orders", "Address");
+            DropColumn("dbo.Orders", "Date");
+        }
+    }
+}

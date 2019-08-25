@@ -1,0 +1,96 @@
+<div id="control_products">
+
+    <select class="selectFilter" ng-model="search.Category" ng-init="userRole = !user.IsAdmin ? 'user' : 'admin'">
+        <option value="">Category</option>
+        <option ng-repeat="category in categories" ng-value="category.Name">{{category.Name}}</option>
+    </select>
+
+    <select class="selectFilter" ng-model="search.Size" ng-init="userRole = !user.IsAdmin ? 'user' : 'admin'">
+        <option value="">Size</option>
+        <option ng-repeat="size in sizes | orderBy:'toString()'" ng-value="size">{{size}}</option>
+    </select>
+
+    <!--<a href="" ng-click="addProductsToWishlist(products)">
+        <div id="add_product_wl" class="custom_btn">
+            <span>Add to whishlist</span>
+        </div>
+    </a>
+    <a href="" ng-click="addProductsToCart(products)">
+        <div id="add_product_cart" class="custom_btn">
+            <span>Add to cart</span>
+        </div>
+    </a>-->
+
+    <a href="#!/saveProduct" ng-if="isAdmin()" ng-click="gotoAddProduct()">
+        <div id="add_product" class="custom_btn">
+            <span>Add new product</span>
+        </div>
+    </a>
+
+    <!--<a href="" ng-if="isAdmin()" ng-click="deleteProducts(products)">
+        <div id="delete_product" class="custom_btn">
+            <span>Delete products</span>
+        </div>
+    </a>-->
+
+    <div id="view_mode">
+        <a href="#!/productsCard" ng-click="changeView('card')">
+            <div class="grid">
+                <img src="img/grid.png" />
+            </div>
+        </a>
+        <a href="#!/productsTable" ng-click="changeView('table')">
+            <div class="list active">
+                <img src="img/list.png" />
+            </div>
+        </a>
+    </div>
+
+    <input type="text" class="searchbox" ng-model="search.Name" placeholder="Search by name" />
+</div>
+
+<!-- article template for user-->
+<div ng-repeat="product in products | orderBy:['-CreatedDate','Name'] | filter:search" class="article product-table">
+
+    <div class="article-code-name" ng-init="product.checked=false">
+        <div class="article-code">
+            <p>#{{product.ID}}</p>
+        </div>
+        <a href="#!/productDetails/{{product.ID}}">
+            <div class="article-name">
+                <p>{{product.Name}}</p>
+            </div>
+        </a>
+    </div>
+    <a href="#!/productDetails/{{product.ID}}">
+        <div class="article-image">
+            <img class="images" ng-src="{{product.DisplayImageURL || 'img/default_product.png'}}">
+        </div>
+    </a>
+    <div class="article-description">
+        <p>{{product.Description}}</p>
+    </div>
+    <div class="article-price-weight-check">
+        <div class="article-price-weight details_section">
+            <ul>
+                <li class="price">Price: <span class="priceValue">{{product.Price}} RON</span></li>
+                <li class="weight">Available: <span class="weightValue">{{product.Quantity}}</span></li>
+                <li>
+                    <a ng-click="addToWishlist(product)"><span class="edit_pannel action-button button-wishlist">Add to wishlist</span></a>
+                    <a ng-click="addToCart(product)"><span class="edit_pannel action-button button-cart">Add to cart</span></a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <!--<input class="checkProduct" ng-click="checkProduct(product)" ng-checked="product.checked" type="checkbox">-->
+            <a ng-if="isAdmin()" ng-click="gotoEditProduct(product)"><div class="editButton" id="editButton">E</div></a>
+            <a ng-if="isAdmin()" ng-click="deleteProduct(product)"><div class="editButton" id="editButton">D</div></a>
+        </div>
+    </div>
+</div>
+
+<div ng-show="products.length == 0">
+    <center>
+        <h2 class="ng-scope">No products in shop yet.</h2>
+    </center>
+</div>
